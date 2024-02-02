@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import UserList from './UserList';
 
 const UserForm = () => {
     const [formData, setFormData] = useState({
@@ -29,24 +30,27 @@ const UserForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
-                Username:
-                <input type="text" name="username" value={formData.username} onChange={handleChange} />
-            </label>
-            <br />
-            <label>
-                Email:
-                <input type="text" name="email" value={formData.email} onChange={handleChange} />
-            </label>
-            <br />
-            <label>
-                Number:
-                <input type="text" name="number" value={formData.number} onChange={handleChange} />
-            </label>
-            <br />
-            <button type="submit">Submit</button>
-        </form>
+        <>
+            <form onSubmit={handleSubmit}>
+                <label>
+                    Username:
+                    <input type="text" name="username" value={formData.username} onChange={handleChange} />
+                </label>
+                <br />
+                <label>
+                    Email:
+                    <input type="text" name="email" value={formData.email} onChange={handleChange} />
+                </label>
+                <br />
+                <label>
+                    Number:
+                    <input type="text" name="number" value={formData.number} onChange={handleChange} />
+                </label>
+                <br />
+                <button type="submit">Submit</button>
+            </form>
+            <UserList />
+        </>
     );
 };
 
